@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Consulta y descarga de constancias del 1er Congreso Nacional e Internacional de Posgrado en Ciencias Económico-Administrativas UJAT 2027."
+    >
+
+    <title>Constancias | Congreso UJAT 2027</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/main.js" defer></script>
+    <script src="js/constancias.js" defer></script>
+</head>
+
+<body>
+
+    <!-- BARRA INSTITUCIONAL -->
+    
+
+    <!-- ENCABEZADO -->
+    <header class="topbar franja-institucional">
+<div class="franja-contenido">
+<div class="franja-logos">
+<a class="logo-medallon" href="https://www.ujat.mx/" target="_blank" rel="noopener noreferrer" aria-label="Portal oficial UJAT (nueva pestaña)"><img alt="UJAT" src="images/ujat.png"/></a>
+<a class="logo-medallon" href="https://www.ujat.mx/dacea" target="_blank" rel="noopener noreferrer" aria-label="Portal oficial DACEA (nueva pestaña)"><img alt="DACEA" src="images/dacea.png"/></a>
+<div class="logo-medallon"><img alt="Legado UJAT" src="images/legado.png"/></div>
+</div>
+<div class="franja-menu">
+<button aria-controls="nav-principal" aria-expanded="false" aria-label="Abrir menú" class="menu-btn" id="menuBtn" type="button">☰</button>
+<nav aria-label="Navegación principal" class="nav" id="nav-principal">
+<a href="index.html">Inicio</a>
+<a href="convocatoria.html">Convocatoria</a>
+<a href="programa.html">Programa</a>
+<a href="registro.html">Registro</a>
+<a aria-current="page" class="activo" href="constancias.html">Constancias</a>
+</nav>
+</div>
+</div>
+</header>
+
+    <main id="contenido-principal">
+
+        <!-- PORTADA -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__contenido">
+
+                    <span class="hero__etiqueta">
+                        UNIVERSIDAD JUÁREZ AUTÓNOMA DE TABASCO
+                    </span>
+
+                    <h1>
+                        Consulta de <span>Constancias</span>
+                    </h1>
+
+                    <p class="hero__sub">
+                        Consulta tu constancia de participación
+                        utilizando tu nombre completo y folio personal.
+                    </p>
+
+                    <div class="hero__fecha">
+                        <p>25 y 26 de febrero de 2027</p>
+                        <p>Modalidad: Participación virtual</p>
+                        <p>
+                            DACEA · Universidad Juárez
+                            Autónoma de Tabasco
+                        </p>
+                    </div>
+
+                    <div class="hero__botones">
+                        <a href="#buscador" class="btn">
+                            Buscar mi constancia
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INTRODUCCIÓN -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Consulta tu Constancia</h2>
+
+                    <p>
+                        Sistema de consulta de constancias
+                        del Congreso UJAT 2027.
+                    </p>
+                </div>
+
+                <p class="lead-center">
+                    Ingresa tu nombre completo y folio
+                    tal como fueron registrados para
+                    consultar la disponibilidad de
+                    tu constancia de participación.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- BUSCADOR DE CONSTANCIAS -->
+        <section
+            class="section section--gray"
+            id="buscador"
+        >
+            <div class="container">
+
+                <div class="constancia-buscador">
+
+                    <div class="constancia-buscador__encabezado">
+
+                        <div
+                            class="constancia-buscador__icono"
+                            aria-hidden="true"
+                        >
+                            &#128196;
+                        </div>
+
+                        <h2>Buscar Constancia</h2>
+
+                        <p>
+                            Completa los siguientes campos
+                            para consultar tu constancia.
+                        </p>
+
+                    </div>
+
+                    <form id="formConstancia">
+
+                        <!-- NOMBRE COMPLETO -->
+                        <div class="constancia-campo">
+
+                            <label for="nombreConstancia">
+                                Nombre completo
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nombreConstancia"
+                                name="nombre"
+                                placeholder="Escribe tu nombre completo"
+                                autocomplete="name"
+                                maxlength="150"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- FOLIO PERSONAL -->
+                        <div class="constancia-campo">
+
+                            <label for="folioConstancia">
+                                Folio de participación
+                            </label>
+
+                            <input
+                                type="text"
+                                id="folioConstancia"
+                                name="folio"
+                                placeholder="Ingresa tu folio personal"
+                                autocomplete="off"
+                                maxlength="80"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- BOTÓN DE BÚSQUEDA -->
+                        <button
+                            type="submit"
+                            class="btn constancia-boton"
+                            id="btnBuscarConstancia"
+                        >
+                            Buscar mi constancia
+                        </button>
+
+                    </form>
+
+                    <!-- RESULTADOS -->
+                    <div
+                        id="resultadoConstancia"
+                        class="constancia-resultado"
+                        role="status"
+                        aria-live="polite"
+                        aria-atomic="true"
+                        hidden
+                    ></div>
+
+                    <p class="constancia-buscador__nota">
+                        Verifica que tu nombre completo
+                        y folio coincidan con los datos
+                        de tu registro.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INSTRUCCIONES -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>¿Cómo consultar tu constancia?</h2>
+
+                    <p>
+                        Realiza tu búsqueda siguiendo
+                        estos tres pasos.
+                    </p>
+                </div>
+
+                <div class="grid">
+
+                    <article class="card">
+                        <div class="card__icon">01</div>
+
+                        <h3>Ingresa tu nombre</h3>
+
+                        <p>
+                            Escribe tu nombre completo
+                            tal como aparece en tu
+                            registro del Congreso.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card__icon">02</div>
+
+                        <h3>Captura tu folio</h3>
+
+                        <p>
+                            Introduce el folio personal
+                            que te haya sido asignado.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card__icon">03</div>
+
+                        <h3>Descarga tu constancia</h3>
+
+                        <p>
+                            Si tus datos coinciden con
+                            un registro autorizado y
+                            tu constancia está disponible,
+                            podrás descargarla en PDF.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ATENCIÓN A PARTICIPANTES -->
+        <section class="section section--gray" id="ayuda">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>¿Necesitas ayuda?</h2>
+
+                    <p>
+                        Contacta al comité organizador
+                        para recibir orientación.
+                    </p>
+                </div>
+
+                <div class="constancia-ayuda">
+
+                    <h3>Atención a Participantes</h3>
+
+                    <p>
+                        Si tienes dudas sobre tu folio
+                        o la disponibilidad de tu constancia,
+                        comunícate mediante el correo
+                        institucional del Congreso.
+                    </p>
+
+                    <a
+                        href="mailto:cip.dacea@ujat.mx"
+                        class="btn"
+                    >
+                        Contactar organización
+                    </a>
+
+                    <p class="constancia-ayuda__correo">
+                        cip.dacea@ujat.mx
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer__grid">
+
+                <div>
+                    <h3>Congreso UJAT 2027</h3>
+
+                    <p>
+                        1er Congreso Nacional e Internacional
+                        de Posgrado en Ciencias
+                        Económico-Administrativas.
+                    </p>
+
+                    <p>
+                        Universidad Juárez Autónoma de Tabasco.
+                    </p>
+
+                    <p>
+                        División Académica de Ciencias
+                        Económico Administrativas.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Navegación</h4>
+
+                    <a href="index.html">Inicio</a>
+                    <a href="convocatoria.html">Convocatoria</a>
+                    <a href="programa.html">Programa</a>
+                    <a href="registro.html">Registro</a>
+                    <a href="constancias.html">Constancias</a>
+                </div>
+
+                <div>
+                    <h4>Contacto</h4>
+
+                    <a href="mailto:cip.dacea@ujat.mx">
+                        cip.dacea@ujat.mx
+                    </a>
+
+                    <a href="tel:+529933581500">
+                        99 3358 1500
+                    </a>
+
+                    <p>Extensiones: 6204, 6205 y 6206</p>
+                    <p>Villahermosa, Tabasco, México</p>
+                </div>
+
+            </div>
+
+            <div class="footer__bottom">
+                <p>
+                    © 2027 Universidad Juárez Autónoma de Tabasco.
+                    Congreso Nacional e Internacional de Posgrado
+                    en Ciencias Económico-Administrativas.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
